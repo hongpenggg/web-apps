@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sanitisers Web App</title>
+        <style>
+            * {
+                text-align: center;
+            }
+
+            table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            }
+            
+            td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            }
+            
+            tr:nth-child(even) {
+            background-color: #dddddd;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Sanitisers web app</h1>
+        <h2>By Hongpeng</h2>
+
+        <br>
+        
+        <h3>Find sanitisers by active ingredient</h3>
+        <form action="{{ url_for('index') }}" method="post">
+            <input type="text" name="ing" id="ing" placeholder="Enter active ingredient">
+            <input type="submit" value="Find sanitisers">
+        </form>
+
+        <br>
+
+        <h3>All sanitisers</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Number</th>
+                    <th>Product Name</th>
+                    <th>Active Ingredient</th>
+                    <th>Alcohol-based?</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in rows %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </body>
+</html>

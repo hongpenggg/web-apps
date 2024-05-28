@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Web App</title>
+    <style>
+        * {
+            text-align: center;
+        }
+
+        table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        }
+
+        td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        }
+
+        tr:nth-child(even) {
+        background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>School Web App</h1>
+    <h2>By Hongpeng</h2>
+
+    <br>
+
+    <table>
+        <thead>
+            <th>PersonID</th>
+            <th>Full Name</th>
+            <th>Date of Birth</th>
+            <th>Screen Name</th>
+            <th>Is Adult? (0 = False, 1 = True)</th>
+        </thead>
+        <tbody>
+            {% for i in data %}
+            <tr>
+                <td>{{ i[0] }}</td>
+                <td>{{ i[1] }}</td>
+                <td>{{ i[2] }}</td>
+                <td>{{ i[3] }}</td>
+                <td>{{ i[4] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

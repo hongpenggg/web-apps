@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spectrum Warranty Search Results</title>
+    <style>
+        * {
+            text-align: center;
+        }
+
+        table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        }
+
+        td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        }
+
+        tr:nth-child(even) {
+        background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Acknowledgement Page</h1>
+    <h3>Dear customer, we have received your warranty request for the following product. Our friendly customer officer will contact you in 3 working days.</h3>
+
+    <br>
+
+    <table>
+        <tr>
+            <th>SerialNo</th>
+            <th>ModelNo</th>
+            <th>Screen Size</th>
+            <th>Resolution</th>
+            <th>Order Date</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>{{ serial_model[0][0] }}</td>
+            <td>{{ serial_model[0][1] }}</td>
+            <td>{{ specs[0][3] }}</td>
+            <td>{{ specs[0][4] }}</td>
+            <td>{{ order_email[0][3] }}</td>
+            <td>{{ order_email[0][1] }}</td>
+        </tr>
+    </table>
+</body>
+</html>
